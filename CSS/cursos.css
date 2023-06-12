@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+:root {
+    --black: rgb(0,0,0);
+    --white: rgb(255,255,255);
+    --purple: rgb(131,96,195);
+    --purple1: rgb(39,29,59);
+    --purple2: rgb(200,191,231);
+    --green: rgb(48,188,146);
+    --degrade_1: linear-gradient(46deg, var(--purple),var(--green));
+    --degrade_2: linear-gradient(to right, #9F66FF, #503480);
+    --green1: #5dfaf2;
+    --purple3: #9a44cc;
+    --purple4: #631894;
+    --purple5: #271D3B;
+    --purple6: #c3a6f1;
+    --purple7: rgb(187, 172, 211);
+    --gray: #131212;
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* barra de navegação */
+nav
+{
+    padding: 30px;
+}
+
+nav .menu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .menu .img
+{
+    width: 120px;
+    height: 20px;
+
+}
+
+nav .menu .navigation
+{
+    display: flex;
+}
+nav .menu li 
+{
+    list-style: none;
+}
+
+nav .menu li a
+{
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+nav .menu .navigation li a::after
+{
+    content: " ";
+    width: 0;
+    height: 4px;
+    background-image: var(--degrade_1);
+    border-radius: 10px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+nav .menu .navigation li a:hover::after
+{
+    width: 100%;
+}
+
+
+nav .menu .navigation li:not(:first-child)
+{
+    margin-left: 50px;
+}
+
+nav .menu .login
+{
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, var(--green) 0%, var(--purple3) 100% );
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.menu .login:hover
+{
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px var(--purple6);
+    transform: translateY(-0.1em);
+}
+
+.menu .login:active
+{
+    box-shadow: inset 0px 0.1em 0.6em var(--purple4);
+    transform: translateY(0em);
+}
+
+/* conteudo */
+
+body
+{
+    background-color: var(--purple5);
+    
+}
+
+main.cards {
+    display: flex;
+    padding: 32px;
+    margin-top: 90px;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: var(--white);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card .icon {
+    /* width: 64px; */
+    height: 64px;
+}
+
+main.cards section.card img {
+    width: 100px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+main.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 700px;
+    font-size: 80%;
+    margin-bottom: 20px;
+}
+
+main.cards section.card .curso {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 16px 0;
+}
+main.cards section.card.course {
+    box-shadow: 20px 20px 50px -30px var(--purple7);
+}
+
+main .card.course .curso
+{
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: var(--degrade_2);
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.card.course .curso:hover
+{
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px var(--purple6);
+    transform: translateY(-0.1em);
+}
+
+.card.course .curso:active
+{
+    box-shadow: inset 0px 0.1em 0.6em var(--purple4);
+    transform: translateY(0em);
+}
+
+.card:hover {
+    transform: scale3d(1.1, 1.1, 50); 
+  }  
+
+
+/* rodapé */
+
+footer
+{
+    bottom: 0;
+}
+
+.footer-distribuded
+{
+    background-color: var(--gray);
+    box-sizing: border-box;
+    widows: 100%;
+    text-align: left;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+    color: var(--white);
+    
+}
+
+.footer-distribuded .footer-left, .footer-distribuded .footer-center, .footer-distribuded .footer-right
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distribuded .footer-left
+{
+    width: 30%;
+}
+
+.footer-distribuded img
+{
+    width: 100px;
+    margin: 0;
+}
+
+.footer-distribuded .footer-links
+{
+    margin: 20px 0 12px ;
+}
+
+.footer-distribuded .footer-links a
+{
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distribuded .footer-company-name
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center
+{
+    width: 35%;
+}
+
+.footer-distribuded .footer-center i
+{
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distribuded .footer-center p 
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center p span
+{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distribuded .footer-center p a
+{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-right
+{
+    width: 30%;
+}
+
+.footer-distribuded .footer-company-about 
+{
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    text-align: justify;
+}
+
+.footer-distribuded .footer-company-about span
+{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distribuded .footer-icons
+{
+    margin-top: 25px;
+}
+
+.footer-distribuded .footer-icons a
+{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: var(--purple4);
+    font-size: 20px;
+    text-align: center;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    line-height: 40px;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-icons a:hover
+{
+    background-color: var(--black);
+}
+
+.footer-links a:hover
+{
+    color: var(--green);
+}

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+:root {
+    --black: rgb(0,0,0);
+    --white: rgb(255,255,255);
+    --purple: rgb(131,96,195);
+    --purple1: rgb(39,29,59);
+    --purple2: rgb(200,191,231);
+    --green: rgb(48,188,146);
+    --degrade_1: linear-gradient(46deg, var(--purple),var(--green));
+    --green1: #5dfaf2;
+    --purple3: #9a44cc;
+    --purple4: #631894;
+    --purple5: #271D3B;
+    --purple6: #c3a6f1;
+    --gray: #131212;
+}
+
+
+*{
+	font-family: 'Poppins', sans-serif;
+	margin:0; padding:0;
+	box-sizing: border-box;
+	outline: none; border:none;
+	text-transform: capitalize;
+	transition: all .2s linear;
+}
+
+/* barra de navegação */
+nav
+{
+    padding: 30px;
+}
+
+nav .menu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .menu .img
+{
+    width: 120px;
+    height: 20px;
+
+}
+
+nav .menu .navigation
+{
+    display: flex;
+}
+nav .menu li 
+{
+    list-style: none;
+}
+
+nav .menu li a
+{
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+nav .menu .navigation li a::after
+{
+    content: " ";
+    width: 0;
+    height: 4px;
+    background-image: var(--degrade_1);
+    border-radius: 10px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+nav .menu .navigation li a:hover::after
+{
+    width: 100%;
+}
+
+
+nav .menu .navigation li:not(:first-child)
+{
+  margin-left: 50px;
+}
+
+nav .menu .login
+{
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, var(--green) 0%, var(--purple3) 100% );
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.menu .login:hover
+{
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px var(--purple6);
+    transform: translateY(-0.1em);
+}
+
+.menu .login:active
+{
+    box-shadow: inset 0px 0.1em 0.6em var(--purple4);
+    transform: translateY(0em);
+}
+
+
+/* conteudo */
+
+body {
+	background: var(--purple5);
+	font: 14px Arial;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  min-height: 100vh;
+  background: var(--purple5);
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count:initial;
+}
+
+@keyframes slidein {
+	from {
+	  margin-left: 100%;
+	  width: 300%;
+	}
+  
+	to {
+	  margin-left: 0%;
+	  width: 100%;
+	}
+  }
+
+.container form{
+  padding:20px;
+  width:700px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(224, 146, 231, 0.897);
+}
+
+.container form .row{
+  display: flex;
+  flex-wrap: wrap;
+  gap:15px;
+}
+
+.container form .row .col{
+  flex:1 1 250px;
+}
+
+.container form .row .col .title{
+  font-size: 20px;
+  color:var(--purple3);
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.05em var(--black);
+}
+
+.container form .row .col .inputBox{
+  margin:15px 0;
+}
+
+.container form .row .col .inputBox span{
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container form .row .col .inputBox input{
+  width: 100%;
+  border:1px solid #ccc;
+  padding:10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+
+.container form .row .col .inputBox input:focus{
+  border:1px solid #000;
+}
+
+.container form .row .col .flex{
+  display: flex;
+  gap:15px;
+}
+
+.container form .row .col .flex .inputBox{
+  margin-top: 5px;
+}
+
+.container form .row .col .inputBox img{
+  height: 34px;
+  margin-top: 5px;
+  filter: drop-shadow(0 0 1px #000);
+}
+
+.container form .submit-btn{
+  width: 100%;
+  padding:12px;
+  font-size: 17px;
+  background: var(--purple3);
+  color:#fff;
+  margin-top: 5px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: var(--purple5) solid 1px;
+}
+
+.container form .submit-btn:hover{
+  background: var(--purple6);
+  border: #000 solid 1px;
+  color: var(--black);
+}
+
+#id a
+{
+  color: white;
+}
+
+
+/* rodapé */
+
+footer
+{
+    bottom: 0;
+}
+
+.footer-distribuded
+{
+    background-color: var(--gray);
+    box-sizing: border-box;
+    widows: 100%;
+    text-align: left;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+    color: var(--white);
+    
+}
+
+.footer-distribuded .footer-left, .footer-distribuded .footer-center, .footer-distribuded .footer-right
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distribuded .footer-left
+{
+    width: 30%;
+}
+
+.footer-distribuded img
+{
+    width: 100px;
+    margin: 0;
+}
+
+.footer-distribuded .footer-links
+{
+    margin: 20px 0 12px ;
+}
+
+.footer-distribuded .footer-links a
+{
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distribuded .footer-company-name
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center
+{
+    width: 35%;
+}
+
+.footer-distribuded .footer-center i
+{
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distribuded .footer-center p 
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center p span
+{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distribuded .footer-center p a
+{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-right
+{
+    width: 30%;
+}
+
+.footer-distribuded .footer-company-about 
+{
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    text-align: justify;
+}
+
+.footer-distribuded .footer-company-about span
+{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distribuded .footer-icons
+{
+    margin-top: 25px;
+}
+
+.footer-distribuded .footer-icons a
+{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: var(--purple4);
+    font-size: 20px;
+    text-align: center;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    line-height: 40px;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-icons a:hover
+{
+    background-color: var(--black);
+}
+
+.footer-links a:hover
+{
+    color: var(--green);
+}

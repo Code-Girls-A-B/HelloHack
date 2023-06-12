@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+:root {
+    --black: rgb(0,0,0);
+    --white: rgb(255,255,255);
+    --purple: rgb(131,96,195);
+    --purple1: rgb(39,29,59);
+    --purple2: rgb(200,191,231);
+    --green: rgb(48,188,146);
+    --degrade_1: linear-gradient(46deg, var(--purple),var(--green));
+    --green1: #5dfaf2;
+    --purple3: #9a44cc;
+    --purple4: #631894;
+    --purple5: #271D3B;
+    --purple6: #c3a6f1;
+    --gray: #131212;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* barra de navegação */
+nav
+{
+    padding: 30px;
+}
+
+nav .menu
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+nav .menu .img
+{
+    width: 120px;
+    height: 20px;
+
+}
+
+nav .menu .navigation
+{
+    display: flex;
+}
+nav .menu li 
+{
+    list-style: none;
+}
+
+nav .menu li a
+{
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+nav .menu .navigation li a::after
+{
+    content: " ";
+    width: 0;
+    height: 4px;
+    background-image: var(--degrade_1);
+    border-radius: 10px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    transition: width 0.5s;
+}
+
+nav .menu .navigation li a:hover::after
+{
+    width: 100%;
+}
+
+
+nav .menu .navigation li:not(:first-child)
+{
+    margin-left: 50px;
+}
+
+nav .menu .login
+{
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    will-change: box-shadow,transform;
+    background: radial-gradient( 100% 100% at 100% 0%, var(--green) 0%, var(--purple3) 100% );
+    box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.menu .login:hover
+{
+    box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px var(--purple6);
+    transform: translateY(-0.1em);
+}
+
+.menu .login:active
+{
+    box-shadow: inset 0px 0.1em 0.6em var(--purple4);
+    transform: translateY(0em);
+}
+
+/* conteudo */
+
+body
+{
+  background: var(--purple5);
+} 
+
+.inicial {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    padding: 5% 19%;
+}
+
+.inicial h1 {
+    text-transform: uppercase;
+    font-size: 50px;
+    color: var(--purple3);
+    text-shadow: 0.1em 0.1em 0.05em var(--black);
+
+}
+
+
+
+.inicial .principal-title {
+    color: var(--white);
+    font-family:sans-serif;
+}
+
+
+.inicial .principal-image {
+    display: flex;
+    flex-direction: row;
+    align-items:end;
+    justify-content:right;    
+}
+
+.inicial .size-img {
+    width: 500px;
+    height: 500px;
+    border-radius: 90px;
+}
+
+.vulnerability {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 5rem;
+    align-items: center;
+    padding: 70px 20%;
+    background-color: var(--green);
+    padding-top: 50px;
+}
+
+.vulnerability h2 {
+    margin-top: 10px;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 25px;
+    font-weight:800;
+}
+
+.vulnerability h3 {
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight:700;
+}
+
+.vulnerability p {
+    font-size: 18px;
+    color: var(--black);
+    text-align: justify;
+}
+
+.vulnerability ul li {
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+.protection {
+    align-items: center;
+    padding: 100px 20%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5rem;
+    background-color: var(--white);
+}
+
+.protection-init {
+    display: flex;
+    flex-direction: row;
+}
+
+.protection .securit-format {
+    font-size: 8px;
+    position: relative;
+    width: 18em;
+    height: 13em;
+    border-radius: 2em;
+    top: 10em;
+    box-sizing: border-box;
+    border: 3.5em solid var(--purple4);
+    border-right-width: 7.5em;
+    border-left-width: 7.5em;
+    margin: 0 0 6rem 0;
+}
+
+.protection .securit-format::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: 2.5em solid var(--purple4);
+    width: 14em;
+    height: 12em;
+    left: 50%;
+    margin-left: -7em;
+    top: -12em;
+    border-top-left-radius: 7em;
+    border-top-right-radius: 7em;
+}
+
+.protection .securit-format::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: 1em solid var(--purple4);
+    width: 5em;
+    height: 8em;
+    border-radius: 2.5em;
+    left: 50%;
+    top: -1em;
+    margin-left: -2.5em; 
+}
+
+.protection-init-text {
+    padding: 50px;
+    text-align: justify;
+}
+
+.protection .protection-content {
+    align-items: center;
+    padding: 10px ;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+}
+
+.protection .protection-content  p, h4, ul li {
+    text-align: justify;
+}
+
+.protection .protection-content h3,h2{
+    color: var(--purple4);
+}
+
+.attack {
+    align-items: center;
+    padding: 100px 20%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    background-color: var(--purple6);
+    text-align: justify;
+}
+
+.attack h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-shadow: 0.1em 0.1em 0.05em var(--white);
+}
+
+.attack h3 {
+    color: var(--white);
+    text-shadow: 0.1em 0.1em 0.05em var(--gray);
+}
+
+.project-fonts {
+    align-items: center;
+    padding: 50px 20%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+    background-color: var(--purple5);
+}
+
+.project-fonts h3 {
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-fonts p {
+    color: var(--purple6);
+}
+
+/* rodapé */
+
+footer
+{
+    bottom: 0;
+}
+
+.footer-distribuded
+{
+    background-color: var(--gray);
+    box-sizing: border-box;
+    widows: 100%;
+    text-align: left;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+    color: var(--white);
+    
+}
+
+.footer-distribuded .footer-left, .footer-distribuded .footer-center, .footer-distribuded .footer-right
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distribuded .footer-left
+{
+    width: 30%;
+}
+
+.footer-distribuded img
+{
+    width: 100px;
+    margin: 0;
+}
+
+.footer-distribuded .footer-links
+{
+    margin: 20px 0 12px ;
+}
+
+.footer-distribuded .footer-links a
+{
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distribuded .footer-company-name
+{
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center
+{
+    width: 35%;
+}
+
+.footer-distribuded .footer-center i
+{
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distribuded .footer-center p 
+{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distribuded .footer-center p span
+{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-distribuded .footer-center p a
+{
+    text-decoration: none;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-right
+{
+    width: 30%;
+}
+
+.footer-distribuded .footer-company-about 
+{
+    line-height: 20px;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+    text-align: justify;
+}
+
+.footer-distribuded .footer-company-about span
+{
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distribuded .footer-icons
+{
+    margin-top: 25px;
+}
+
+.footer-distribuded .footer-icons a
+{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 2px;
+    background-color: var(--purple4);
+    font-size: 20px;
+    text-align: center;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    line-height: 40px;
+    color: var(--white);
+}
+
+.footer-distribuded .footer-icons a:hover
+{
+    background-color: var(--black);
+}
+
+.footer-links a:hover
+{
+    color: var(--green);
+}
